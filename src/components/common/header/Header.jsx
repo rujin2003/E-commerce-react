@@ -1,11 +1,33 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 import { Button } from '../../home/Hero/index';
 import { IoMenuOutline, IoCloseOutline } from 'react-icons/io5';
 import { navItems } from '../../home/Hero/data.js';
 
 const Header = ({ colorDeep }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [activeItem, setActiveItem] = useState(navItems[0].id); 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const headerHeight = document.querySelector('header').offsetHeight;
+
+      navItems.forEach(item => {
+        const section = document.getElementById(item.id);
+        if (section) {
+          const sectionTop = section.offsetTop - headerHeight;
+          const sectionHeight = section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveItem(item.id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className='flex lg:items-center lg:justify-between lg:flex-row lg:gap-0 w-full md:px-16 flex-col gap-4 px-4'>
@@ -23,8 +45,15 @@ const Header = ({ colorDeep }) => {
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                onClick={() => setOpenMenu(false)}
-                className={`lg:px-4 py-2 lg:mt-8 md:text-base bg-transparent lg:ml-4 mt-2 text-sm hover:text-gray-900 focus:outline-none focus:shadow-outline`}>
+                onClick={() => {
+                  setOpenMenu(false);
+                  setActiveItem(item.id);
+                }}
+                className={`lg:px-4 py-2 lg:mt-8 md:text-base bg-transparent lg:ml-4 mt-2 text-sm focus:outline-none focus:shadow-outline ${
+                  activeItem === item.id ? 'text-white border-b-2' : 'hover:text-gray-900'
+                }`}
+                style={activeItem === item.id ? { borderColor: colorDeep, color: colorDeep } : {}}
+              >
                 {item.label}
               </a>
             </li>
@@ -38,7 +67,7 @@ const Header = ({ colorDeep }) => {
         />
       </nav>
     </header>
-  )
-}
+  );
+};
 
 export default Header;
