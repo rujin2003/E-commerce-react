@@ -23,8 +23,9 @@ const Pages = () => {
     return (
         <>
             <Router>
-                <Header />
+                
                 <Routes>
+
                     <Route path="/" element={<Home />}></Route>
                     <Route path="/shop" element={<Shop />}></Route>
                     <Route path="/shop-detail" element={<ShopDetail />}></Route>

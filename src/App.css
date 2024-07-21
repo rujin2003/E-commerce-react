@@ -20,24 +20,25 @@ body {
 }
 .nav-hov:hover {
   cursor: pointer;
-  color: #81c408;
+  color: #EAD0B3;
 }
 .transition {
   transition: 0.3s;
 }
 .search {
-  border: 1px solid #ffb524;
+  border: 1px solid #EAD0B3;
   border-radius: 50%;
   transition: 0.3s;
 }
 .search-hov:hover {
-  background-color: #ffb524;
+  background-color: #9A8873;
 }
 .bord {
   background-color: #ffb524;
 }
 .icon-hov {
   transition: 0.3s;
+ 
 }
 .icon-hov:hover {
   cursor: pointer;
