@@ -1,0 +1,77 @@
+.footer-container {
+    background-color: #000;
+  }
+  
+  .footer-head {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .footer-body {
+    transition: 0.5s;
+    color: rgba(255, 255, 255, .5);
+    line-height: 2;
+    font-size: 16px;
+  }
+  
+  .footer-body:hover {
+    cursor: pointer;
+    color: #EAD0B3;
+  }
+  
+  .footer-contact {
+    color: rgba(255, 255, 255, .5);
+    line-height: 2;
+    font-size: 16px;
+  }
+  
+  @media screen and (min-width:992px) {
+    .footer-head {
+      font-size: 24px;
+    }
+  }
+  
+  @media screen and (min-width:1200px) {
+    .footer-head {
+      font-size: 24px;
+    }
+  }
+  
+  .read {
+    color: #fff;
+  }
+  
+  .read:hover {
+    background-color: #9A8873;
+    color: #fff;
+  }
+  
+  .subscribe {
+    background-color: #9A8873;
+  }
+  
+  .subscribe:hover {
+    background-color: #EAD0B3;
+  }
+  
+  .social {
+    color: #fff;
+    transition: 0.5s;
+  }
+  
+  .social:hover {
+    cursor: pointer;
+    color: #000;
+    background-color: #9A8873;
+  }
+  
+ 
+  .shop-info {
+    margin-left: 30px; 
+  }
+  
+  .contact-section {
+    margin-left: -30px; 
+  }
+  

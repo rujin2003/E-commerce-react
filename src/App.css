@@ -125,32 +125,6 @@ body {
 }
 
 
-/* Hero  */
-.overlay {
-  background-image: url('../public/img/hero-img.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment:fixed;
-  height: 800px;
-}
-@media screen and (min-width:576px) and (max-width:992px) {
-  .overlay {
-    height: 900px;
-  }
-}
-
-@media screen and (min-width:992px) {
-  .overlay {
-    height: 600px;
-  }
-}
-.img {
-  transform: translate(-50%,-50%);
-  border-radius: 10px;
-  background-color: #ffb624c9;
-}
-
 /* Featured  */
 .after::after {
   content: '';
